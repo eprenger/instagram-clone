@@ -1,0 +1,9 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+@layer components {
+  .navBtn {
+    @apply hidden h-6 md:inline-flex cursor-pointer transition ease-out;
+  }
+}
