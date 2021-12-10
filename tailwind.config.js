@@ -10,8 +10,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/forms"),
-    require("tailwind-scrollbar"),
-    require("@tailwindcss/line-clamp"),
-    require("tailwind-scrollbar-hide"),
+    // ...
   ],
 };
