@@ -36,7 +36,7 @@ export default function Header() {
           </div>
           <input
             className="bg-gray-50 block w-full pl-10 sm:text-sm 
-            border-gray-300  !focus:ring-black focus:border-black rounded-md"
+            border-gray-300  focus:ring-black rounded-md"
             placeholder="Search"
           />
         </div>
