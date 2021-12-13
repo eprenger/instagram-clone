@@ -4,15 +4,25 @@ const posts = [
   {
     id: "123",
     username: "eprenger",
-    userImg: "https://links.papareact.com/3ke",
-    img: "https://links.papareact.com/3ke",
+    userImg:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
     caption: "this is cool",
   },
   {
     id: "123",
     username: "eprenger",
-    userImg: "https://links.papareact.com/3ke",
-    img: "https://links.papareact.com/3ke",
+    userImg:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    caption: "this is cool",
+  },
+  {
+    id: "123",
+    username: "eprenger",
+    userImg:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+    img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
     caption: "this is cool",
   },
 ];
