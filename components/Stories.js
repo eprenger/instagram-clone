@@ -17,7 +17,7 @@ function Stories() {
   return (
     <div
       className="flex space-x-2 p-6 bg-white mt-8
-    border border-gray-200 rounded-sm overflow-x-scroll"
+    border border-gray-200 rounded-md overflow-x-scroll"
     >
       {suggestions.map((profile) => (
         <Story
