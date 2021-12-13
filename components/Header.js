@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 import {
   SearchIcon,
@@ -11,6 +12,8 @@ import {
 } from "@heroicons/react/outline";
 
 export default function Header() {
+  const { data: session } = useSession();
+
   return (
     <div className="shadow-sm border-b bg-white sticky top-0 z-50">
       <div className="flex justify-between max-w-6xl mx-5 lg:mx-auto">
@@ -49,27 +52,32 @@ export default function Header() {
         </div>
 
         {/* right */}
-        <div className="flex items-center justify-end space-x-4">
-          <HomeIcon className=" navBtn" />
-          <MenuIcon className="md:hidden h-6 cursor-pointer" />
-          <div className="relative navBtn">
-            <PaperAirplaneIcon className="navBtn rotate-45" />
-            <div
-              className="absolute -top-2 -right-3 bg-blue-400 rounded-full flex 
+        {session ? (
+          <div className="flex items-center justify-end space-x-4">
+            <HomeIcon className=" navBtn" />
+            <MenuIcon className="md:hidden h-6 cursor-pointer" />
+            <div className="relative navBtn">
+              <PaperAirplaneIcon className="navBtn rotate-45" />
+              <div
+                className="absolute -top-2 -right-3 bg-blue-400 rounded-full flex 
                text-white items-center justify-center text-xs w-5 h-5"
-            >
-              3
+              >
+                3
+              </div>
             </div>
+            <PlusCircleIcon className="navBtn" />
+            <UserGroupIcon className="navBtn" />
+            <HeartIcon className="navBtn" />
+            <img
+              onClick={signOut}
+              src={session?.user?.image}
+              alt="profile pic"
+              className="h-10 w-10 rounded-full cursor-pointer"
+            />
           </div>
-          <PlusCircleIcon className="navBtn" />
-          <UserGroupIcon className="navBtn" />
-          <HeartIcon className="navBtn" />
-          <img
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-            alt="profile pic"
-            className="h-10 rounded-full cursor-pointer"
-          />
-        </div>
+        ) : (
+          <button onClick={signIn}>Sign In</button>
+        )}
       </div>
     </div>
   );
