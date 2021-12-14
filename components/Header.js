@@ -11,9 +11,12 @@ import {
   MenuIcon,
   HomeIcon,
 } from "@heroicons/react/outline";
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtom";
 
 export default function Header() {
   const { data: session } = useSession();
+  const [open, setOpen] = useRecoilState(modalState);
   const router = useRouter();
 
   return (
@@ -74,7 +77,7 @@ export default function Header() {
                 3
               </div>
             </div>
-            <PlusCircleIcon className="navBtn" />
+            <PlusCircleIcon onClick={() => setOpen(true)} className="navBtn" />
             <UserGroupIcon className="navBtn" />
             <HeartIcon className="navBtn" />
             <img
